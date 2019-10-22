@@ -23,6 +23,20 @@ $ go get github.com/phogolabs/restify
 ## Getting Started
 
 ```golang
+type CreateUserInput struct {
+	FirstName string `json:"first_name" header:"-"            validate:"required"`
+	LastName  string `json:"last_name"  header:"-"            validate:"required"`
+	CreatedBy string `json:"-"          header:"X-Created-By" validate:"-"`
+}
+
+type CreateUserOutput struct {
+	UserID string `json:"user_id"`
+}
+
+func (output *CreateUserOutput) Status() int {
+	return http.StatusCreated
+}
+
 func create(w http.ResponseWriter, r *http.Request) {
 	reactor := restify.NewReactor(w, r)
 
@@ -37,9 +51,8 @@ func create(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// TODO: implement your logic here
-	spew.Dump(input)
 
-	if err := reactor.RenderWith(http.StatusCreated, output); err != nil {
+	if err := reactor.Render(output); err != nil {
 		reactor.Render(err)
 		return
 	}
