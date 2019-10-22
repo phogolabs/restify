@@ -7,6 +7,7 @@ import (
 	"reflect"
 	"strings"
 
+	"github.com/fatih/structs"
 	"github.com/phogolabs/flaw"
 	"gopkg.in/go-playground/validator.v9"
 )
@@ -33,15 +34,23 @@ func (v *Validator) Validate(obj interface{}) (err error) {
 	var verrs validator.ValidationErrors
 
 	if errors.As(err, &verrs) {
-		errs := flaw.ErrorCollector{}
+		var (
+			errs   = flaw.ErrorCollector{}
+			stack  = flaw.NewStackTraceAt(v.skip)
+			name   = structs.New(obj).Name()
+			msg    = fmt.Sprintf("'%s' validation failed", name)
+			prefix = fmt.Sprintf("%s.", name)
+		)
 
 		for _, field := range verrs {
-			werr := fmt.Errorf("'%s' field does not obey '%s' validation rule", field.Namespace(), field.Tag())
+			fname := strings.TrimPrefix(field.Namespace(), prefix)
+			werr := fmt.Errorf("'%s' field does not obey '%s' validation rule", fname, field.Tag())
 			errs.Wrap(werr)
 		}
 
-		stack := flaw.NewStackTraceAt(v.skip)
-		err = flaw.Wrap(errs, stack...).WithStatus(http.StatusUnprocessableEntity)
+		err = flaw.Wrap(errs, stack...).
+			WithMessage(msg).
+			WithStatus(http.StatusUnprocessableEntity)
 	}
 
 	return err

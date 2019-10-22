@@ -9,9 +9,14 @@ import (
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
+
+	"github.com/phogolabs/log"
+	"github.com/phogolabs/log/handler/json"
 )
 
 func TestRestify(t *testing.T) {
+	log.SetHandler(json.New(GinkgoWriter))
+
 	RegisterFailHandler(Fail)
 	RunSpecs(t, "Restify Suite")
 }

@@ -24,7 +24,7 @@ var _ = Describe("Validator", func() {
 
 	It("validates an object successfully", func() {
 		input := &Input{}
-		Expect(validator.Validate(input)).To(MatchError("cause: ['Input.Name' field does not obey 'required' validation rule]"))
+		Expect(validator.Validate(input)).To(MatchError("message: 'Input' validation failed cause: ['Name' field does not obey 'required' validation rule]"))
 	})
 
 	Context("when the content-type is unknown", func() {
@@ -34,7 +34,7 @@ var _ = Describe("Validator", func() {
 
 		It("validates an object successfully", func() {
 			input := &Input{}
-			Expect(validator.Validate(input)).To(MatchError("cause: ['Input.Name' field does not obey 'required' validation rule]"))
+			Expect(validator.Validate(input)).To(MatchError("message: 'Input' validation failed cause: ['Name' field does not obey 'required' validation rule]"))
 		})
 	})
 
@@ -50,7 +50,7 @@ var _ = Describe("Validator", func() {
 			)
 
 			Expect(flaw.Status(err)).To(Equal(http.StatusUnprocessableEntity))
-			Expect(err).To(MatchError("cause: ['Input.json_name' field does not obey 'required' validation rule]"))
+			Expect(err).To(MatchError("message: 'Input' validation failed cause: ['json_name' field does not obey 'required' validation rule]"))
 		})
 	})
 
@@ -66,7 +66,7 @@ var _ = Describe("Validator", func() {
 			)
 
 			Expect(flaw.Status(err)).To(Equal(http.StatusUnprocessableEntity))
-			Expect(err).To(MatchError("cause: ['Input.xml_name' field does not obey 'required' validation rule]"))
+			Expect(err).To(MatchError("message: 'Input' validation failed cause: ['xml_name' field does not obey 'required' validation rule]"))
 		})
 	})
 
@@ -82,7 +82,7 @@ var _ = Describe("Validator", func() {
 			)
 
 			Expect(flaw.Status(err)).To(Equal(http.StatusUnprocessableEntity))
-			Expect(err).To(MatchError("cause: ['Input.form_name' field does not obey 'required' validation rule]"))
+			Expect(err).To(MatchError("message: 'Input' validation failed cause: ['form_name' field does not obey 'required' validation rule]"))
 		})
 	})
 
@@ -98,7 +98,7 @@ var _ = Describe("Validator", func() {
 			)
 
 			Expect(flaw.Status(err)).To(Equal(http.StatusUnprocessableEntity))
-			Expect(err).To(MatchError("cause: ['Input.Name' field does not obey 'required' validation rule]"))
+			Expect(err).To(MatchError("message: 'Input' validation failed cause: ['Name' field does not obey 'required' validation rule]"))
 		})
 	})
 })
