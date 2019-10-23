@@ -51,7 +51,7 @@ var _ = Describe("Encoder", func() {
 
 			Context("when the output is an error", func() {
 				It("encodes the output successfully", func() {
-					Expect(encoder.Encode(flaw.New("oh no"))).To(Succeed())
+					Expect(encoder.Encode(flaw.Errorf("oh no"))).To(Succeed())
 					Expect(response.Code).To(Equal(http.StatusInternalServerError))
 					Expect(response.Body.String()).To(Equal("{\"error_message\":\"oh no\"}\n"))
 				})
@@ -94,7 +94,7 @@ var _ = Describe("Encoder", func() {
 
 			Context("when the output is an error", func() {
 				It("encodes the output successfully", func() {
-					Expect(encoder.Encode(flaw.New("oh no"))).To(Succeed())
+					Expect(encoder.Encode(flaw.Errorf("oh no"))).To(Succeed())
 					Expect(response.Code).To(Equal(http.StatusInternalServerError))
 					Expect(response.Body.String()).To(Equal("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><ErrorMessage>oh no</ErrorMessage></Error>"))
 				})
@@ -168,7 +168,7 @@ var _ = Describe("Encoder", func() {
 		It("encodes the output successfully", func() {
 			encoder.SetContentType(restify.ContentTypeXML)
 
-			Expect(encoder.Encode(flaw.New("oh no"))).To(Succeed())
+			Expect(encoder.Encode(flaw.Errorf("oh no"))).To(Succeed())
 			Expect(response.Code).To(Equal(http.StatusInternalServerError))
 			Expect(response.Body.String()).To(Equal("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><ErrorMessage>oh no</ErrorMessage></Error>"))
 		})

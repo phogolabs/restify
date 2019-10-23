@@ -162,7 +162,7 @@ var _ = Describe("Reactor", func() {
 
 		Context("when the output is an error", func() {
 			It("overrides the error status", func() {
-				output := flaw.New("not found")
+				output := flaw.Errorf("not found")
 				Expect(reactor.RenderWith(http.StatusNotFound, output)).To(Succeed())
 				Expect(response.Code).To(Equal(http.StatusNotFound))
 			})

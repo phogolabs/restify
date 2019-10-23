@@ -14,8 +14,8 @@ require (
 	github.com/mitchellh/mapstructure v1.1.2
 	github.com/onsi/ginkgo v1.10.2
 	github.com/onsi/gomega v1.7.0
-	github.com/phogolabs/flaw v0.0.0-20191020075239-a65b16d2cc18
-	github.com/phogolabs/log v0.0.0-20191007140342-5ee8fbe3bae8
+	github.com/phogolabs/flaw v0.0.0-20191023065131-ef10f45475ef
+	github.com/phogolabs/log v0.0.0-20191023072150-db076f8d3d3e
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/go-playground/validator.v9 v9.30.0
 )
