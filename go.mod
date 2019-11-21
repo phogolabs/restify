@@ -12,7 +12,7 @@ require (
 	github.com/go-playground/universal-translator v0.16.0 // indirect
 	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/mitchellh/mapstructure v1.1.2
-	github.com/onsi/ginkgo v1.10.2
+	github.com/onsi/ginkgo v1.10.3
 	github.com/onsi/gomega v1.7.0
 	github.com/phogolabs/flaw v0.0.0-20191023065131-ef10f45475ef
 	github.com/phogolabs/log v0.0.0-20191023072150-db076f8d3d3e
