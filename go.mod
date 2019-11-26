@@ -17,5 +17,5 @@ require (
 	github.com/phogolabs/flaw v0.0.0-20191023065131-ef10f45475ef
 	github.com/phogolabs/log v0.0.0-20191023072150-db076f8d3d3e
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
-	gopkg.in/go-playground/validator.v9 v9.30.0
+	gopkg.in/go-playground/validator.v9 v9.30.2
 )
