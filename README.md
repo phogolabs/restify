@@ -2,7 +2,7 @@
 
 [![Documentation][godoc-img]][godoc-url]
 ![License][license-img]
-[![Build Status][travis-img]][travis-url]
+[![Build Status][action-img]][action-url]
 [![Coverage][codecov-img]][codecov-url]
 [![Go Report Card][report-img]][report-url]
 
@@ -61,15 +61,15 @@ func create(w http.ResponseWriter, r *http.Request) {
 
 ## Contributing
 
-We are welcome to any contributions. Just fork the
+We are open for any contributions. Just fork the
 [project](https://github.com/phogolabs/restify).
 
-[travis-img]: https://travis-ci.org/phogolabs/restify.svg?branch=master
-[travis-url]: https://travis-ci.org/phogolabs/restify
 [report-img]: https://goreportcard.com/badge/github.com/phogolabs/restify
 [report-url]: https://goreportcard.com/report/github.com/phogolabs/restify
 [codecov-url]: https://codecov.io/gh/phogolabs/restify
 [codecov-img]: https://codecov.io/gh/phogolabs/restify/branch/master/graph/badge.svg
+[action-img]: https://github.com/phogolabs/restify/workflows/pipeline/badge.svg
+[action-url]: https://github.com/phogolabs/restify/actions
 [godoc-url]: https://godoc.org/github.com/phogolabs/restify
 [godoc-img]: https://godoc.org/github.com/phogolabs/restify?status.svg
 [license-img]: https://img.shields.io/badge/license-MIT-blue.svg
