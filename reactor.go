@@ -3,7 +3,7 @@ package restify
 import (
 	"net/http"
 
-	"github.com/creasty/defaults"
+	"github.com/phogolabs/inflate"
 )
 
 // Reactor works with http response and request
@@ -41,7 +41,7 @@ func (r *Reactor) Bind(obj interface{}) (err error) {
 
 	// set defaults
 	if err == nil {
-		err = defaults.Set(obj)
+		err = inflate.SetDefault(obj)
 	}
 
 	// validate
@@ -66,7 +66,7 @@ func (r *Reactor) Render(obj interface{}) (err error) {
 
 	if obj != nil {
 		// set defaults
-		if err = defaults.Set(obj); err != nil {
+		if err = inflate.SetDefault(obj); err != nil {
 			return err
 		}
 	}

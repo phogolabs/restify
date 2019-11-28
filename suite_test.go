@@ -1,7 +1,6 @@
 package restify_test
 
 import (
-	"database/sql"
 	"encoding/xml"
 	"fmt"
 	"net/http"
@@ -12,6 +11,7 @@ import (
 
 	"github.com/phogolabs/log"
 	"github.com/phogolabs/log/handler/json"
+	"github.com/phogolabs/schema"
 )
 
 func TestRestify(t *testing.T) {
@@ -22,12 +22,12 @@ func TestRestify(t *testing.T) {
 }
 
 type Input struct {
-	Version int           `json:"-" xml:"-" header:"X-Version"`
-	Filter  int           `json:"-" xml:"-" query:"filter"`
-	Type    int           `json:"-" xml:"-" param:"type"`
-	No      sql.NullInt64 `json:"-" xml:"-" form:"no"`
-	Ptr     *int          `json:"-" xml:"-" header:"X-Ptr"`
-	Name    string        `json:"json_name" xml:"xml_name" form:"form_name,option" default:"john" validate:"required"`
+	Version int              `json:"-" xml:"-" header:"X-Version"`
+	Filter  int              `json:"-" xml:"-" query:"filter"`
+	Type    int              `json:"-" xml:"-" path:"type"`
+	No      schema.NullInt64 `json:"-" xml:"-" form:"no"`
+	Ptr     *int             `json:"-" xml:"-" header:"X-Ptr"`
+	Name    string           `json:"json_name" xml:"xml_name" form:"form_name,option" default:"john" validate:"required"`
 }
 
 type BindableInput struct {
