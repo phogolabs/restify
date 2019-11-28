@@ -132,8 +132,8 @@ var _ = Describe("Reactor", func() {
 
 		Context("when the output is not a pointer", func() {
 			It("returns an error", func() {
-				output := RenderableOutput{}
-				Expect(reactor.Render(output)).To(MatchError("not a struct pointer"))
+				var output RenderableOutput
+				Expect(reactor.Render(output)).To(MatchError("the target must be a pointer"))
 			})
 		})
 

@@ -100,7 +100,7 @@ var _ = Describe("Decoder", func() {
 
 			It("returns an error", func() {
 				input := &Input{}
-				Expect(decoder.Decode(input)).To(MatchError("[error decoding 'no': converting driver.Value type string (\"London\") to a int64: invalid syntax]"))
+				Expect(decoder.Decode(input)).To(MatchError("cannot convert string 'London' to struct: strconv.ParseInt: parsing \"London\": invalid syntax"))
 			})
 		})
 
@@ -138,7 +138,7 @@ var _ = Describe("Decoder", func() {
 		Context("when the value is not a pointer", func() {
 			It("returns an error", func() {
 				input := Input{}
-				Expect(decoder.Decode(input)).To(MatchError("result must be a pointer"))
+				Expect(decoder.Decode(input)).To(MatchError("the target must be a pointer"))
 			})
 		})
 	})
@@ -174,7 +174,7 @@ var _ = Describe("Decoder", func() {
 
 			It("returns an error", func() {
 				input := &Input{}
-				Expect(decoder.Decode(input)).To(MatchError("[cannot parse 'X-Version' as int: strconv.ParseInt: parsing \"alpha\": invalid syntax]"))
+				Expect(decoder.Decode(input)).To(MatchError("cannot convert string 'alpha' to int: strconv.ParseInt: parsing \"alpha\": invalid syntax"))
 			})
 		})
 	})
@@ -198,7 +198,7 @@ var _ = Describe("Decoder", func() {
 
 			It("returns an error", func() {
 				input := &Input{}
-				Expect(decoder.Decode(input)).To(MatchError("[cannot parse 'filter' as int: strconv.ParseInt: parsing \"john\": invalid syntax]"))
+				Expect(decoder.Decode(input)).To(MatchError("cannot convert string 'john' to int: strconv.ParseInt: parsing \"john\": invalid syntax"))
 			})
 		})
 	})
@@ -239,7 +239,7 @@ var _ = Describe("Decoder", func() {
 
 			It("returns an error", func() {
 				input := &Input{}
-				Expect(decoder.Decode(input)).To(MatchError("[cannot parse 'type' as int: strconv.ParseInt: parsing \"employee\": invalid syntax]"))
+				Expect(decoder.Decode(input)).To(MatchError("cannot convert string 'employee' to int: strconv.ParseInt: parsing \"employee\": invalid syntax"))
 			})
 		})
 	})
