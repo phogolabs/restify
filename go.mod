@@ -14,7 +14,7 @@ require (
 	github.com/onsi/ginkgo v1.10.3
 	github.com/onsi/gomega v1.7.1
 	github.com/phogolabs/flaw v0.0.0-20191023065131-ef10f45475ef
-	github.com/phogolabs/inflate v0.0.0-20191205094441-0659ad099f38
+	github.com/phogolabs/inflate v0.0.0-20191205131309-7098d64452e4
 	github.com/phogolabs/log v0.0.0-20191023072150-db076f8d3d3e
 	github.com/phogolabs/schema v0.0.0-20190406105649-68a93910a72e
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
