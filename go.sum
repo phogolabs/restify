@@ -69,8 +69,8 @@ github.com/phogolabs/flaw v0.0.0-20191023065131-ef10f45475ef h1:/CJyJUGxBagg+w+5
 github.com/phogolabs/flaw v0.0.0-20191023065131-ef10f45475ef/go.mod h1:8sjRPqWMNj+arx9IOBk5Ebl0qyboVfEliQxIT7JL7b0=
 github.com/phogolabs/flaw v0.0.0-20191127174302-4f33634378f0 h1:M3LJvOhnce7w1nuaSEOXdJ2AKeDftFF41t2rNhfoF9Y=
 github.com/phogolabs/flaw v0.0.0-20191127174302-4f33634378f0/go.mod h1:8sjRPqWMNj+arx9IOBk5Ebl0qyboVfEliQxIT7JL7b0=
-github.com/phogolabs/inflate v0.0.0-20191211053626-2ff6ef0350e1 h1:q4a0YSbrKMhqq6pL6rRAc4DREujy8OFeFiBmVDbh69Q=
-github.com/phogolabs/inflate v0.0.0-20191211053626-2ff6ef0350e1/go.mod h1:ePC3v2xNOpWnDr6y5pmk09TCW4JYD2vYCDruOclMBOg=
+github.com/phogolabs/inflate v0.0.0-20191211151453-890681b29b83 h1:2fuUseYoi25UQ1y/Cgss9gWV6wg/bYNEyiYTt7mRzG4=
+github.com/phogolabs/inflate v0.0.0-20191211151453-890681b29b83/go.mod h1:ePC3v2xNOpWnDr6y5pmk09TCW4JYD2vYCDruOclMBOg=
 github.com/phogolabs/log v0.0.0-20191127172145-f737d8658073 h1:ACtNpzOMIxUP6bIE+LoVov0XjENrtSctj2B043TH6yE=
 github.com/phogolabs/log v0.0.0-20191127172145-f737d8658073/go.mod h1:j2gwPB/JQT4EvaZfWJ6jr9gIOc/Ka7hWVKqP+zzKYrE=
 github.com/phogolabs/schema v0.0.0-20190406105649-68a93910a72e h1:tuly/nIhZHuqvv0n9puLtMQ/5zv8DJ6m060w02GKHW8=

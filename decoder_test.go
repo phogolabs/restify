@@ -100,7 +100,7 @@ var _ = Describe("Decoder", func() {
 
 			It("returns an error", func() {
 				input := &Input{}
-				Expect(decoder.Decode(input)).To(MatchError("cannot convert string 'London' to struct: strconv.ParseInt: parsing \"London\": invalid syntax"))
+				Expect(decoder.Decode(input)).To(MatchError("cannot convert string 'London' to struct: converting driver.Value type string (\"London\") to a int64: invalid syntax"))
 			})
 		})
 
