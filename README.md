@@ -68,7 +68,7 @@ We are open for any contributions. Just fork the
 [report-url]: https://goreportcard.com/report/github.com/phogolabs/restify
 [codecov-url]: https://codecov.io/gh/phogolabs/restify
 [codecov-img]: https://codecov.io/gh/phogolabs/restify/branch/master/graph/badge.svg
-[action-img]: https://github.com/phogolabs/restify/workflows/pipeline/badge.svg
+[action-img]: https://github.com/phogolabs/restify/workflows/main/badge.svg
 [action-url]: https://github.com/phogolabs/restify/actions
 [godoc-url]: https://godoc.org/github.com/phogolabs/restify
 [godoc-img]: https://godoc.org/github.com/phogolabs/restify?status.svg
