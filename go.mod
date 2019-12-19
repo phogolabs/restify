@@ -9,7 +9,7 @@ require (
 	github.com/go-playground/universal-translator v0.17.0 // indirect
 	github.com/golang/protobuf v1.3.1 // indirect
 	github.com/leodido/go-urn v1.2.0 // indirect
-	github.com/onsi/ginkgo v1.10.3
+	github.com/onsi/ginkgo v1.11.0
 	github.com/onsi/gomega v1.7.1
 	github.com/phogolabs/flaw v0.0.0-20191127174302-4f33634378f0
 	github.com/phogolabs/inflate v0.0.0-20191211151453-890681b29b83
