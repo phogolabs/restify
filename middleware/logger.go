@@ -23,7 +23,7 @@ func Logger(next http.Handler) http.Handler {
 			return proto
 		}
 
-		return log.Map{
+		fields := log.Map{
 			"scheme":      scheme(r),
 			"host":        r.Host,
 			"url":         r.RequestURI,
@@ -32,6 +32,12 @@ func Logger(next http.Handler) http.Handler {
 			"remote_addr": r.RemoteAddr,
 			"request_id":  middleware.GetReqID(r.Context()),
 		}
+
+		if header := r.Header.Get("X-Cloud-Trace-Context"); header != "" {
+			fields["trace_context"] = header
+		}
+
+		return fields
 	}
 
 	fn := func(w http.ResponseWriter, r *http.Request) {
