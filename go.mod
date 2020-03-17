@@ -7,7 +7,6 @@ require (
 	github.com/go-chi/chi v4.0.2+incompatible
 	github.com/go-playground/form v3.1.4+incompatible
 	github.com/go-playground/universal-translator v0.17.0 // indirect
-	github.com/golang/protobuf v1.3.1 // indirect
 	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/onsi/ginkgo v1.10.3
 	github.com/onsi/gomega v1.7.1
@@ -15,6 +14,7 @@ require (
 	github.com/phogolabs/inflate v0.0.0-20191211151453-890681b29b83
 	github.com/phogolabs/log v0.0.0-20191127172145-f737d8658073
 	github.com/phogolabs/schema v0.0.0-20190406105649-68a93910a72e
+	go.opencensus.io v0.22.3
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/go-playground/validator.v9 v9.30.2
 )
