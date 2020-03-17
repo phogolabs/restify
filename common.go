@@ -2,6 +2,9 @@ package restify
 
 import (
 	"mime"
+	"net/http"
+
+	"github.com/phogolabs/log"
 )
 
 // ContentType is an enumeration of common HTTP content types.
@@ -59,4 +62,9 @@ func ParseContent(header string) (*Content, error) {
 	}
 
 	return content, nil
+}
+
+// GetLogger returns the associated request logger
+func GetLogger(r *http.Request) log.Logger {
+	return log.GetContext(r.Context())
 }
