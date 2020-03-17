@@ -24,7 +24,7 @@ func StripSlashes(next http.Handler) http.Handler {
 
 		if len(path) > 1 && path[len(path)-1] == '/' {
 			rctx.RoutePath = path[:len(path)-1]
-			r.URL.Path = path
+			r.URL.Path = rctx.RoutePath
 		}
 
 		next.ServeHTTP(w, r)
