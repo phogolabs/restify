@@ -57,11 +57,11 @@ func Logger(next http.Handler) http.Handler {
 
 		switch {
 		case writer.Status() >= 500:
-			logger.Error("request handling completed with error")
+			logger.Error("request handling fail")
 		case writer.Status() >= 400:
-			logger.Warn("request handling completed with warning")
+			logger.Warn("request handling warning")
 		default:
-			logger.Info("request handling completed succesfully")
+			logger.Info("request handling success")
 		}
 	}
 
