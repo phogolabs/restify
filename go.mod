@@ -4,7 +4,7 @@ go 1.13
 
 require (
 	github.com/fatih/structs v1.1.0
-	github.com/go-chi/chi v4.0.2+incompatible
+	github.com/go-chi/chi v4.1.0+incompatible
 	github.com/go-playground/form v3.1.4+incompatible
 	github.com/go-playground/universal-translator v0.17.0 // indirect
 	github.com/leodido/go-urn v1.2.0 // indirect
