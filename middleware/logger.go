@@ -6,6 +6,7 @@ import (
 
 	"github.com/go-chi/chi/middleware"
 	"github.com/phogolabs/log"
+	"go.opentelemetry.io/otel/api/trace"
 )
 
 // Logger is a middleware that logs the start and end of each request, along
@@ -13,6 +14,8 @@ import (
 // and how long it took to return.
 func Logger(next http.Handler) http.Handler {
 	fields := func(r *http.Request) log.Map {
+		ctx := r.Context()
+
 		scheme := func(r *http.Request) string {
 			proto := "http"
 
@@ -33,8 +36,13 @@ func Logger(next http.Handler) http.Handler {
 			"request_id":  middleware.GetReqID(r.Context()),
 		}
 
-		if header := r.Header.Get("X-Cloud-Trace-Context"); header != "" {
-			fields["trace_context"] = header
+		traceID := trace.
+			SpanFromContext(ctx).
+			SpanContext().
+			TraceID
+
+		if len(traceID) > 0 {
+			fields["trace_id"] = traceID
 		}
 
 		return fields

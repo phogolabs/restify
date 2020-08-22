@@ -10,11 +10,12 @@ require (
 	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/onsi/ginkgo v1.14.0
 	github.com/onsi/gomega v1.10.1
-	github.com/phogolabs/flaw v0.0.0-20191127174302-4f33634378f0
+	github.com/phogolabs/flaw v0.0.0-20200430120352-4ad281bcdd57
 	github.com/phogolabs/inflate v0.0.0-20191211151453-890681b29b83
-	github.com/phogolabs/log v0.0.0-20191127172145-f737d8658073
+	github.com/phogolabs/log v0.0.0-20200821231339-ae99c7919a89
 	github.com/phogolabs/schema v0.0.0-20190406105649-68a93910a72e
 	go.opencensus.io v0.22.4
+	go.opentelemetry.io/otel v0.10.0
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/go-playground/validator.v9 v9.31.0
 )
