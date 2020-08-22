@@ -36,13 +36,16 @@ func Logger(next http.Handler) http.Handler {
 			"request_id":  middleware.GetReqID(r.Context()),
 		}
 
-		traceID := trace.
+		span := trace.
 			SpanFromContext(ctx).
-			SpanContext().
-			TraceID
+			SpanContext()
 
-		if len(traceID) > 0 {
+		if traceID := span.TraceID; len(traceID) > 0 {
 			fields["trace_id"] = traceID
+		}
+
+		if spanID := span.SpanID; len(spanID) > 0 {
+			fields["span_id"] = spanID
 		}
 
 		return fields
