@@ -115,6 +115,8 @@ github.com/phogolabs/inflate v0.0.0-20191211151453-890681b29b83 h1:2fuUseYoi25UQ
 github.com/phogolabs/inflate v0.0.0-20191211151453-890681b29b83/go.mod h1:ePC3v2xNOpWnDr6y5pmk09TCW4JYD2vYCDruOclMBOg=
 github.com/phogolabs/log v0.0.0-20200821231339-ae99c7919a89 h1:Xy5rJ/S7RQxcdmD2XhSVuX9fLpIgSGobsGoMm7fCHS4=
 github.com/phogolabs/log v0.0.0-20200821231339-ae99c7919a89/go.mod h1:XekTMKadLFWy7fNUk+7NVbSIXyxsh80tRI2d4wVJ6RM=
+github.com/phogolabs/log v0.0.0-20200822122537-c5427662104a h1:uwSFLp/d85TkBSTmtyggRnjeTt3MpnrWPc1D/TUYUFU=
+github.com/phogolabs/log v0.0.0-20200822122537-c5427662104a/go.mod h1:XekTMKadLFWy7fNUk+7NVbSIXyxsh80tRI2d4wVJ6RM=
 github.com/phogolabs/schema v0.0.0-20190406105649-68a93910a72e h1:tuly/nIhZHuqvv0n9puLtMQ/5zv8DJ6m060w02GKHW8=
 github.com/phogolabs/schema v0.0.0-20190406105649-68a93910a72e/go.mod h1:ea0tRhas4e4ozZ1FcDdJiKKLivneEtPyrSdpvbHUuLs=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
