@@ -40,12 +40,12 @@ func Logger(next http.Handler) http.Handler {
 			SpanFromContext(ctx).
 			SpanContext()
 
-		if traceID := span.TraceID; len(traceID) > 0 {
-			fields["trace_id"] = traceID
+		if span.HasTraceID() {
+			fields["trace_id"] = span.TraceID
 		}
 
-		if spanID := span.SpanID; len(spanID) > 0 {
-			fields["span_id"] = spanID
+		if span.HasSpanID() {
+			fields["span_id"] = span.SpanID
 		}
 
 		return fields
