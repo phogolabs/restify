@@ -63,7 +63,7 @@ func Logger(next http.Handler) http.Handler {
 		logger = logger.WithFields(log.Map{
 			"status":   writer.Status(),
 			"size":     writer.BytesWritten(),
-			"duration": time.Since(start),
+			"duration": time.Since(start).String(),
 		})
 
 		switch {
