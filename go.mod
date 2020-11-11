@@ -10,7 +10,7 @@ require (
 	github.com/golang/protobuf v1.4.3 // indirect
 	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/onsi/ginkgo v1.14.0
-	github.com/onsi/gomega v1.10.1
+	github.com/onsi/gomega v1.10.3
 	github.com/phogolabs/flaw v0.0.0-20200822061332-36460da02916
 	github.com/phogolabs/inflate v0.0.0-20200311164934-99bf1dd99c03
 	github.com/phogolabs/log v0.0.0-20200822155741-ef1d74433056
