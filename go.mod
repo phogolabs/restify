@@ -16,7 +16,7 @@ require (
 	github.com/phogolabs/log v0.0.0-20200822155741-ef1d74433056
 	github.com/phogolabs/schema v0.0.0-20190406105649-68a93910a72e
 	go.opencensus.io v0.22.5
-	go.opentelemetry.io/otel v0.13.0
+	go.opentelemetry.io/otel v0.14.0
 	google.golang.org/genproto v0.0.0-20201111145450-ac7456db90a6 // indirect
 	google.golang.org/grpc v1.33.2 // indirect
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
