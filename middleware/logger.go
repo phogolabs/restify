@@ -6,7 +6,7 @@ import (
 
 	"github.com/go-chi/chi/middleware"
 	"github.com/phogolabs/log"
-	"go.opentelemetry.io/otel/api/trace"
+	"go.opentelemetry.io/otel/trace"
 )
 
 // Logger is a middleware that logs the start and end of each request, along
