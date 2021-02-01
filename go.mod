@@ -14,7 +14,7 @@ require (
 	github.com/phogolabs/inflate v0.0.0-20200311164934-99bf1dd99c03
 	github.com/phogolabs/log v0.0.0-20201111184021-532c7331555a
 	github.com/phogolabs/schema v0.0.0-20190406105649-68a93910a72e
-	go.opencensus.io v0.22.5
+	go.opencensus.io v0.22.6
 	go.opentelemetry.io/otel v0.15.0
 	google.golang.org/genproto v0.0.0-20210106152847-07624b53cd92 // indirect
 	google.golang.org/grpc v1.34.0 // indirect
