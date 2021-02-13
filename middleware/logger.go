@@ -52,13 +52,22 @@ func Logger(next http.Handler) http.Handler {
 	}
 
 	fn := func(w http.ResponseWriter, r *http.Request) {
-		logger := log.WithFields(fields(r))
-		ctx := log.SetContext(r.Context(), logger)
+		var (
+			logger = log.WithFields(fields(r))
+			level  = log.InfoLevel
+			ctx    = log.SetContext(r.Context(), logger)
+		)
 
 		writer := middleware.NewWrapResponseWriter(w, r.ProtoMajor)
 		start := time.Now()
 
-		next.ServeHTTP(writer, r.WithContext(ctx))
+		// execute the handler
+		r = r.WithContext(ctx)
+		next.ServeHTTP(writer, r)
+
+		if value, err := log.ParseLevel(r.Header.Get("X-Log-Level")); err == nil {
+			level = value
+		}
 
 		logger = logger.WithFields(log.Map{
 			"status":   writer.Status(),
@@ -68,11 +77,17 @@ func Logger(next http.Handler) http.Handler {
 
 		switch {
 		case writer.Status() >= 500:
-			logger.Error("request handling fail")
+			if level <= log.ErrorLevel {
+				logger.Error("request handling fail")
+			}
 		case writer.Status() >= 400:
-			logger.Warn("request handling warning")
+			if level <= log.WarnLevel {
+				logger.Warn("request handling warning")
+			}
 		default:
-			logger.Info("request handling success")
+			if level <= log.InfoLevel {
+				logger.Info("request handling success")
+			}
 		}
 	}
 
