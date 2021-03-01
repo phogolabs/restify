@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/go-chi/chi/middleware"
@@ -54,7 +55,6 @@ func Logger(next http.Handler) http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
 		var (
 			logger = log.WithFields(fields(r))
-			level  = log.InfoLevel
 			ctx    = log.SetContext(r.Context(), logger)
 		)
 
@@ -63,17 +63,20 @@ func Logger(next http.Handler) http.Handler {
 
 		// execute the handler
 		r = r.WithContext(ctx)
+		// invoke the actual handler
 		next.ServeHTTP(writer, r)
-
-		if value, err := log.ParseLevel(r.Header.Get("X-Log-Level")); err == nil {
-			level = value
-		}
 
 		logger = logger.WithFields(log.Map{
 			"status":   writer.Status(),
 			"size":     writer.BytesWritten(),
 			"duration": time.Since(start).String(),
 		})
+
+		level := log.InfoLevel
+		// if we have /heartbeat endpoint we should consider default level to error
+		if strings.HasPrefix(r.RequestURI, "/heartbeat") {
+			level = log.ErrorLevel
+		}
 
 		switch {
 		case writer.Status() >= 500:
