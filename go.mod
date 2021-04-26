@@ -15,7 +15,7 @@ require (
 	github.com/phogolabs/log v0.0.0-20210301135254-d095e2fdec4b
 	github.com/phogolabs/schema v0.0.0-20190406105649-68a93910a72e
 	go.opencensus.io v0.23.0
-	go.opentelemetry.io/otel/trace v0.18.0
+	go.opentelemetry.io/otel/trace v0.20.0
 	google.golang.org/genproto v0.0.0-20210303154014-9728d6b83eeb // indirect
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/go-playground/validator.v9 v9.31.0
