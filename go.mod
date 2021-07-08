@@ -8,8 +8,8 @@ require (
 	github.com/go-playground/form v3.1.4+incompatible
 	github.com/go-playground/universal-translator v0.17.0 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
-	github.com/onsi/ginkgo v1.14.0
-	github.com/onsi/gomega v1.10.1
+	github.com/onsi/ginkgo v1.16.4
+	github.com/onsi/gomega v1.14.0
 	github.com/phogolabs/flaw v0.0.0-20210306145544-6984b46f2d8f
 	github.com/phogolabs/inflate v0.0.0-20200311164934-99bf1dd99c03
 	github.com/phogolabs/log v0.0.0-20210430124854-15b4a15a74cc
