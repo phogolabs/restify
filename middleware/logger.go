@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"bytes"
 	"net/http"
 	"strings"
 	"time"
@@ -54,13 +55,15 @@ func Logger(next http.Handler) http.Handler {
 
 	fn := func(w http.ResponseWriter, r *http.Request) {
 		var (
-			logger = log.WithFields(fields(r))
-			ctx    = log.SetContext(r.Context(), logger)
+			response = &bytes.Buffer{}
+			logger   = log.WithFields(fields(r))
+			ctx      = log.SetContext(r.Context(), logger)
 		)
 
 		writer := middleware.NewWrapResponseWriter(w, r.ProtoMajor)
-		start := time.Now()
+		writer.Tee(response)
 
+		start := time.Now()
 		// execute the handler
 		r = r.WithContext(ctx)
 		// invoke the actual handler
@@ -81,7 +84,7 @@ func Logger(next http.Handler) http.Handler {
 		switch {
 		case writer.Status() >= 500:
 			if level <= log.ErrorLevel {
-				logger.Error("request handling fail")
+				logger.WithField("response", response.String()).Errorf("request handling fail")
 			}
 		case writer.Status() >= 400:
 			if level <= log.WarnLevel {
