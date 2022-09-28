@@ -10,7 +10,7 @@ import (
 	"github.com/phogolabs/log/handler/json"
 	"github.com/phogolabs/restify/middleware"
 
-	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )
 
