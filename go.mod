@@ -4,14 +4,14 @@ go 1.19
 
 require (
 	github.com/fatih/structs v1.1.0
-	github.com/go-chi/chi v4.1.2+incompatible
+	github.com/go-chi/chi/v5 v5.0.8
 	github.com/go-playground/form v3.1.4+incompatible
 	github.com/onsi/ginkgo/v2 v2.6.1
 	github.com/onsi/gomega v1.24.2
-	github.com/phogolabs/flaw v0.0.0-20210430130223-f948049b189e
-	github.com/phogolabs/inflate v0.0.0-20220921075433-1c54b5d60d34
-	github.com/phogolabs/log v0.0.0-20210430125128-bb23cd1dfac5
-	github.com/phogolabs/schema v0.0.0-20220928081706-5e17e2da5d85
+	github.com/phogolabs/flaw v0.0.0-20221219132214-2b8ff98f4f4c
+	github.com/phogolabs/inflate v0.0.0-20221219134934-20b57c865748
+	github.com/phogolabs/log v0.0.0-20221219133944-91ababdb9d91
+	github.com/phogolabs/schema v0.0.0-20221219132603-9818dada473d
 	go.opencensus.io v0.24.0
 	go.opentelemetry.io/otel/trace v1.11.2
 	gopkg.in/go-playground/validator.v9 v9.31.0
@@ -29,6 +29,7 @@ require (
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/jinzhu/copier v0.3.5 // indirect
+	github.com/kr/text v0.2.0 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.16 // indirect

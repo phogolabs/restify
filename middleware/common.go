@@ -1,6 +1,6 @@
 package middleware
 
-import "github.com/go-chi/chi/middleware"
+import "github.com/go-chi/chi/v5/middleware"
 
 var (
 	// RequestID is a middleware that injects a request ID into the context of each

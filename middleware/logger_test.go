@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 
-	"github.com/go-chi/chi"
+	"github.com/go-chi/chi/v5"
 	"github.com/onsi/gomega/gbytes"
 	"github.com/phogolabs/log"
 	"github.com/phogolabs/log/handler/json"
